@@ -1,35 +1,51 @@
-import React from "react";
+import { useState } from "react";
+import { HospitalData } from "../../data/hospital";
+import { Hospital } from "../../types/type";
 
-type Props = {};
+
+type Props = {
+  hospital: Hospital;
+  setHospital: any;
+};
 
 const Navbar = (props: Props) => {
+  const { hospital, setHospital } = props;
   return (
-    <nav className="w-full bg-white rounded-lg flex items-center p-1 my-4">
+    <nav className="w-full bg-white rounded-lg flex items-center  my-4">
       <select
         id="mon-menu-deroulant"
-        className="bg-white w-full py-2 pr-1 border-l-2 border-solid border-text-tertiary"
+        className="bg-white w-full py-4 px-3 border-l-2 border-solid border-text-tertiary"
       >
-        <option value="option1">بیمارستان امام خمینی</option>
-        <option value="option2">بیمارستان گلستان </option>
-        <option value="option3">بیمارستان مهر</option>
-        <option value="option4">بیمارستان رازی</option>
+        {HospitalData.map((data, index) => (
+          <option value={"option" + index} onClick={() => setHospital(data)}>
+            بیمارستان {data.name}
+          </option>
+        ))}
       </select>
       <select
         id="mon-menu-deroulant"
-        className="bg-white w-full py-2 pr-1 border-l-2 border-solid border-text-tertiary"
+        className="bg-white w-full py-4 px-3 border-l-2 border-solid border-text-tertiary"
       >
-        <option value="all">همه ساختمان ها</option>
-        <option value="option2"> ساختمان شماره یک </option>
-        <option value="option3"> ساختمان شماره دو</option>
+        {hospital.buildings.map((data, index) => (
+          <option value={"option" + index}>ساختمان شماره {data.number}</option>
+        ))}
       </select>
       <select
         id="mon-menu-deroulant"
-        className="bg-white w-full py-2 pr-1 border-l-2 border-solid border-text-tertiary"
+        className="bg-white w-full py-4 px-3 border-l-2 border-solid border-text-tertiary"
       >
-        <option value="all">تخت قابل رزرو</option>
-        <option value="option2"></option>
-        <option value="option3">  شماره دو</option>
+        <option value="all">انتخاب نوع تخت</option>
+        <option value="special">ویژه</option>
+        <option value="normal">معمولی</option>
       </select>
+      <select id="mon-menu-deroulant" className="bg-white w-full py-4 px-3 ">
+        <option value="all">مرد</option>
+        <option value="special">زن</option>
+        <option value="special">کودک</option>
+      </select>
+      <button className="bg-bg-primary h-full py-4 px-6 rounded-l-lg text-white">
+        جستحو
+      </button>
     </nav>
   );
 };

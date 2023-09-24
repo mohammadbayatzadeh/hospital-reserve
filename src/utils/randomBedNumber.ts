@@ -1,6 +1,8 @@
-import { Bed } from "../types/type";
-
-const randomBedNumber = (): Object => {
+const randomBedNumber = (): {
+  bed_number: String;
+  vip: Boolean;
+  reserved: Boolean;
+} => {
   const randNum: Number = Math.floor(Math.random() * 800) + 100;
   const randChar: String = Math.random() > 0.5 ? "A" : "B";
   const vip: Boolean = Math.random() > 0 ? true : false;
