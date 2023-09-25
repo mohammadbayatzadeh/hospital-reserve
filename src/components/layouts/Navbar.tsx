@@ -3,16 +3,16 @@ import { HospitalData } from "../../utils/randomHospitalData";
 
 type Props = {
   hospital: Hospital;
-  setHospital: any;
+  setHospital: Function;
 };
 
 const Navbar = (props: Props) => {
   const { hospital, setHospital } = props;
   return (
-    <nav className="w-full bg-white rounded-lg flex items-center  my-4">
+    <nav className="w-full bg-white rounded-lg flex flex-wrap md:flex-nowrap items-center my-4">
       <select
         id="mon-menu-deroulant"
-        className="bg-white w-full py-4 px-3 border-l-2 border-solid border-text-tertiary"
+        className="bg-white w-full py-4 px-3 md:border-l-2  border-solid border-text-tertiary rounded-t-lg md:rounded-l-lg"
       >
         {HospitalData.map((data, index) => (
           <option value={"option" + index} onClick={() => setHospital(data)}>
@@ -22,7 +22,7 @@ const Navbar = (props: Props) => {
       </select>
       <select
         id="mon-menu-deroulant"
-        className="bg-white w-full py-4 px-3 border-l-2 border-solid border-text-tertiary"
+        className="bg-white w-full py-4 px-3 md:border-l-2 border-solid border-text-tertiary md:rounded-l-lg"
       >
         {hospital.buildings.map((data, index) => (
           <option value={"option" + index}>ساختمان شماره {data.number}</option>
@@ -30,7 +30,7 @@ const Navbar = (props: Props) => {
       </select>
       <select
         id="mon-menu-deroulant"
-        className="bg-white w-full py-4 px-3 border-l-2 border-solid border-text-tertiary"
+        className="bg-white w-full py-4 px-3 md:border-l-2 border-solid border-text-tertiary md:rounded-l-lg"
       >
         <option value="all">انتخاب نوع تخت</option>
         <option value="special">ویژه</option>
@@ -41,7 +41,7 @@ const Navbar = (props: Props) => {
         <option value="special">زن</option>
         <option value="special">کودک</option>
       </select>
-      <button className="bg-bg-primary h-full py-4 px-6 rounded-l-lg text-white">
+      <button className="bg-bg-primary w-full h-full py-4 px-6 md:rounded-l-lg rounded-b-lg text-white">
         جستحو
       </button>
     </nav>

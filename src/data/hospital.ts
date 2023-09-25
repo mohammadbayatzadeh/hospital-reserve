@@ -6,7 +6,7 @@ export const hospitalNames: Array<String> = [
   "شفا",
   "شرکت نفت",
   "بقا",
-  "مرکز",
+  "مرکزی",
 ];
 export const numbers: Array<String> = [
   "یک",
@@ -20,4 +20,4 @@ export const numbers: Array<String> = [
   "نه",
   "ده",
 ];
-export const alphabet = ["A", "B", "C", "D", "E", "F", "G"];
+export const alphabet: Array<String> = ["A", "B", "C", "D", "E", "F", "G"];

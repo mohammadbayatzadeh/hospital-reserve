@@ -1,4 +1,4 @@
-const randomBedNumber = (
+const createBedNumber = (
   building: String,
   floor: number,
   room: number,
@@ -17,4 +17,4 @@ const randomBedNumber = (
   };
 };
 
-export { randomBedNumber };
+export { createBedNumber };
