@@ -24,6 +24,5 @@ export type Building = {
 export type Hospital = {
   name: String;
   buildings: Array<Building>;
-  beds_count: Number;
-  // beds: Array<Bed>;
+  beds_count: Array<Bed>;
 };

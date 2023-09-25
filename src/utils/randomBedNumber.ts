@@ -1,14 +1,17 @@
-const randomBedNumber = (): {
+const randomBedNumber = (
+  building: String,
+  floor: number,
+  room: number,
+  bed: number
+): {
   bed_number: String;
   vip: Boolean;
   reserved: Boolean;
 } => {
-  const randNum: Number = Math.floor(Math.random() * 800) + 100;
-  const randChar: String = Math.random() > 0.5 ? "A" : "B";
-  const vip: Boolean = Math.random() > 0 ? true : false;
-  const reserved: Boolean = Math.random() > 0 ? true : false;
+  const vip: Boolean = Math.random() > 0.5 ? true : false;
+  const reserved: Boolean = Math.random() > 0.5 ? true : false;
   return {
-    bed_number: `${randChar}${randNum}`,
+    bed_number: `${building}${floor + 1}${room + 1}${bed + 1}`,
     vip,
     reserved,
   };

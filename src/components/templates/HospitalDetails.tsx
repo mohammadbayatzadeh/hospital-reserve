@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Navbar from "../layouts/Navbar";
-import { HospitalData } from "../../data/hospital";
+import { HospitalData } from "../../utils/randomHospitalData";
 
 type Props = {};
 
 const HospitalDetails = (props: Props) => {
   const [hospital, setHospital] = useState(HospitalData[0]);
+  console.log(hospital)
 
   return (
     <div>

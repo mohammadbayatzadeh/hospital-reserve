@@ -1,7 +1,5 @@
-import { useState } from "react";
-import { HospitalData } from "../../data/hospital";
 import { Hospital } from "../../types/type";
-
+import { HospitalData } from "../../utils/randomHospitalData";
 
 type Props = {
   hospital: Hospital;
