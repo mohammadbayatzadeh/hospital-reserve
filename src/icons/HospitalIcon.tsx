@@ -1,9 +1,13 @@
-function HospitalIcon() {
+type Props = {
+  h: string | number | undefined;
+  w: string | number | undefined;
+};
+function HospitalIcon(props: Props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="101"
-      height="73"
+      width={props.w}
+      height={props.h}
       viewBox="0 0 101 73"
       fill="none"
     >

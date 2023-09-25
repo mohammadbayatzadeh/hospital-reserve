@@ -1,6 +1,6 @@
 import { alphabet, hospitalNames, numbers } from "../data/hospital";
 import { Bed, Building, Hospital } from "../types/type";
-import { createBedNumber } from "./createBedNumber";
+import { bedNumber } from './createBedNumber'
 
 const HospitalData: Array<Hospital> = hospitalNames.map((name) => {
   const buildings_count = Math.floor(Math.random() * 5) + 2;
@@ -18,7 +18,7 @@ const HospitalData: Array<Hospital> = hospitalNames.map((name) => {
           beds: [],
         };
         for (let be = 0; be < Math.floor(Math.random() * 4) + 2; be++) {
-          const bedData = createBedNumber(alphabet[b], f, r, be);
+          const bedData = bedNumber(alphabet[b], f, r, be);
           const bed: Bed = {
             ...bedData,
             building: numbers[b],

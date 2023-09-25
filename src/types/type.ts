@@ -1,5 +1,6 @@
 export type Bed = {
   bed_number: String;
+  ready: Boolean;
   vip: Boolean;
   reserved: Boolean;
   building: String;
