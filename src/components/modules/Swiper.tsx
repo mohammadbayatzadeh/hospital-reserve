@@ -1,30 +1,41 @@
-import Swiper from "swiper";
-import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
 import "swiper/css";
-import "swiper/css/navigation";
-import BuildingTab from "../elements/Buildingtab";
-import { SwiperOptions } from "swiper/types";
+import "./styles.css";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
-function SwiperComp() {
-  const swiperParams: SwiperOptions = {
-    slidesPerView: 3,
-    spaceBetween: 50,
-  };
+import { Pagination, Scrollbar, A11y } from "swiper/modules";
 
-  const SwiperRow: any = new Swiper(".swiper", swiperParams);
+import { Hospital } from "../../types/type";
+import { floorsList } from "../../utils/functions";
+import Buildingtab from "../elements/Buildingtab";
+
+type Props = {
+  hospital: Hospital;
+  setBuilding: Function;
+};
+
+function SwiperComponent({ hospital, setBuilding }: Props) {
   return (
-    <SwiperRow
-      spaceBetween={50}
-      slidesPerView={3}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper: any) => console.log(swiper)}
+    <Swiper
+      modules={[Pagination, Scrollbar, A11y]}
+      pagination={{ clickable: true }}
+      slidesPerView={"auto"}
+      centeredSlides={false}
     >
-      <BuildingTab>Slide 1</BuildingTab>
-      <BuildingTab>Slide 2</BuildingTab>
-      <BuildingTab>Slide 3</BuildingTab>
-      <BuildingTab>Slide 4</BuildingTab>
-    </SwiperRow>
+      {floorsList(hospital).map((floor ,index): any => (
+        <SwiperSlide className="mb-3 pb-4" key={index}>
+          <Buildingtab
+            floor={floor}
+            setBuilding={setBuilding}
+            hospital={hospital}
+          />
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 }
 
-export default SwiperComp;
+export default SwiperComponent;

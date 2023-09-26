@@ -14,6 +14,7 @@ export type Room = {
 
 export type Floor = {
   number: String;
+  building: String;
   rooms: Array<Room>;
 };
 

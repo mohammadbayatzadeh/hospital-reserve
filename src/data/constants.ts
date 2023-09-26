@@ -9,15 +9,15 @@ export const hospitalNames: Array<String> = [
   "مرکزی",
 ];
 export const numbers: Array<String> = [
-  "یک",
-  "دو",
-  "سه",
-  "چهار",
-  "پنج",
-  "شش",
-  "هفت",
-  "هشت",
-  "نه",
-  "ده",
+  "اول",
+  "دوم",
+  "سوم",
+  "چهارم",
+  "پتجم",
+  "ششم",
+  "هفتم",
+  "هشتم",
+  "نهم",
+  "دهم",
 ];
 export const alphabet: Array<String> = ["A", "B", "C", "D", "E", "F", "G"];

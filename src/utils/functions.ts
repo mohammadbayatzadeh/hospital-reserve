@@ -1,4 +1,4 @@
-import { Bed, Hospital } from "../types/type";
+import { Bed, Floor, Hospital } from "../types/type";
 
 const roomsCounter = (hospital: Hospital): number => {
   let rooms: number = 0;
@@ -8,6 +8,16 @@ const roomsCounter = (hospital: Hospital): number => {
     });
   });
   return rooms;
+};
+
+const floorsList = (hospital: Hospital): Array<Floor> => {
+  const list: Array<Floor> = [];
+  hospital.buildings.forEach((build) => {
+    build.floors.forEach((floor) => {
+      list.push(floor);
+    });
+  });
+  return list;
 };
 
 const bedsDetails = (hospital: Hospital): any => {
@@ -41,4 +51,4 @@ const bedsDetails = (hospital: Hospital): any => {
   return details;
 };
 
-export { roomsCounter, bedsDetails };
+export { roomsCounter, bedsDetails, floorsList };
