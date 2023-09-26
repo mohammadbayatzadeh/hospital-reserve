@@ -19,9 +19,17 @@ function DetailsViewer({ hospital }: Props) {
         <p className="text-text-secondary text-sm">بیمارستان {hospital.name}</p>
       </div>
       <div className="w-full">
-        <SwiperComp hospital={hospital} setBuilding={setBuilding} />
+        <SwiperComp
+          hospital={hospital}
+          setBuilding={setBuilding}
+          setFloor={setFloor}
+        />
       </div>
-      
+      <section className="w-full flex  bg-white p-3 rounded-lg mt-3 border border-text-tertiary border-solid rounded-lg">
+        <h2 className=" text-md mb-8 -translate-y-6 bg-white px-2">
+          اطلاعات تخت های {floor.number}:
+        </h2>
+      </section>
     </div>
   );
 }

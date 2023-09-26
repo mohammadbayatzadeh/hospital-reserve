@@ -15,9 +15,10 @@ import Buildingtab from "../elements/Buildingtab";
 type Props = {
   hospital: Hospital;
   setBuilding: Function;
+  setFloor: Function;
 };
 
-function SwiperComponent({ hospital, setBuilding }: Props) {
+function SwiperComponent({ hospital, setBuilding, setFloor }: Props) {
   return (
     <Swiper
       modules={[Pagination, Scrollbar, A11y]}
@@ -25,10 +26,11 @@ function SwiperComponent({ hospital, setBuilding }: Props) {
       slidesPerView={"auto"}
       centeredSlides={false}
     >
-      {floorsList(hospital).map((floor ,index): any => (
+      {floorsList(hospital).map((floor, index): any => (
         <SwiperSlide className="mb-3 pb-4" key={index}>
           <Buildingtab
             floor={floor}
+            setFloor={setFloor}
             setBuilding={setBuilding}
             hospital={hospital}
           />

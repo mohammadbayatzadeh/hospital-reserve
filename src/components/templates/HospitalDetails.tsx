@@ -11,8 +11,8 @@ const HospitalDetails = () => {
       <h4 className="font-bold text-lg">تخصیص تخت</h4>
       <Navbar hospital={hospital} setHospital={setHospital} />
       <section className="w-full flex flex-col bg-white p-3 rounded-lg ">
-        <h2 className="text-2xl font-bold mb-3">
-          لیست اطلاعات بیمارستان {hospital.name}
+        <h2 className="text-2xl font-bold mb-8">
+          <p> اطلاعات بیمارستان {hospital.name}</p>
         </h2>
         <div className=" p-2 border border-text-tertiary border-solid rounded-lg">
           <HospitalInfo hospital={hospital} />

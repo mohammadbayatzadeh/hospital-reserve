@@ -5,13 +5,15 @@ type Props = {
   floor: Floor;
   setBuilding: Function;
   hospital: Hospital;
+  setFloor: Function;
 };
 
-function Buildingtab({ floor, setBuilding, hospital }: Props) {
+function Buildingtab({ floor, setBuilding, hospital, setFloor }: Props) {
   const changeHandler = () => {
     const building = hospital.buildings.find(
       (build) => build.number === floor.building
     );
+    setFloor(floor);
     setBuilding(building);
   };
   return (
