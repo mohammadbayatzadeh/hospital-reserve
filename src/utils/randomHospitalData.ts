@@ -21,7 +21,7 @@ const HospitalData: Array<Hospital> = hospitalNames.map((name) => {
           number: numbers[r],
           beds: [],
         };
-        for (let be = 0; be < Math.floor(Math.random() * 4) + 2; be++) {
+        for (let be = 0; be < Math.floor(Math.random() * 10) + 2; be++) {
           const bedData = bedNumber(alphabet[b], f, r, be);
           const bed: Bed = {
             ...bedData,

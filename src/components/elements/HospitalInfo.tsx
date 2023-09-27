@@ -8,9 +8,9 @@ function HospitalInfo({ hospital }: Props) {
   const bedDetails = bedsDetails(hospital);
 
   return (
-    <div className="w-full flex justify-between ">
+    <div className="w-full  md:flex flex-cols justify-between ">
       <h3 className="-translate-y-6 bg-white px-2">لیست ساختمان ها و تخت های بیمارستان {hospital.name}:</h3>
-      <div className="flex flex-col w-[400px] p-2 rounded-lg bg-bg-secondary text-xs text-text-fourth ">
+      <div className="flex flex-col w-[400px] max-w-full p-2 rounded-lg bg-bg-secondary text-xs text-text-fourth ">
         <span className="w-full py-1 flex justify-between items-center">
           <p className="w-full ">
             تعداد ساختمان ها : {hospital.buildings.length} عدد

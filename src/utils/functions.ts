@@ -51,4 +51,30 @@ const bedsDetails = (hospital: Hospital): any => {
   return details;
 };
 
-export { roomsCounter, bedsDetails, floorsList };
+const floorsDetails = (floor: Floor) => {
+  const details: {
+    rooms_count: number;
+    beds_count: number;
+    ready: Array<Bed>;
+    notReady: Array<Bed>;
+  } = {
+    rooms_count: 0,
+    beds_count: 0,
+    ready: [],
+    notReady: [],
+  };
+  floor.rooms.forEach((r) => {
+    details.rooms_count++;
+    r.beds.forEach((bed) => {
+      details.beds_count++;
+      if (!bed.ready) {
+        details.notReady.push(bed);
+      } else {
+        details.ready.push(bed);
+      }
+    });
+  });
+  return details;
+};
+
+export { roomsCounter, bedsDetails, floorsList, floorsDetails };

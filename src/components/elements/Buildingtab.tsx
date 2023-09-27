@@ -6,9 +6,16 @@ type Props = {
   setBuilding: Function;
   hospital: Hospital;
   setFloor: Function;
+  currentFloor: Floor;
 };
 
-function Buildingtab({ floor, setBuilding, hospital, setFloor }: Props) {
+function Buildingtab({
+  floor,
+  setBuilding,
+  hospital,
+  setFloor,
+  currentFloor,
+}: Props) {
   const changeHandler = () => {
     const building = hospital.buildings.find(
       (build) => build.number === floor.building
@@ -18,10 +25,14 @@ function Buildingtab({ floor, setBuilding, hospital, setFloor }: Props) {
   };
   return (
     <div
-      className="w-[250px] flex flex-col items-center text-sm cursor-pointer"
+      className={`w-[250px] flex flex-col items-center text-sm cursor-pointer  ${
+        floor.number === currentFloor.number
+          ? "border-b-4 border-solid border-bg-primary text-bg-primary"
+          : null
+      }`}
       onClick={changeHandler}
     >
-      <BuildingIcon />
+      <BuildingIcon color={floor.number === currentFloor.number ? '#36459b' : null} />
       {floor.number}
     </div>
   );
