@@ -1,13 +1,15 @@
 type Props = {
   color: string;
+  w?: string | number | undefined;
+  h?: string | number | undefined;
 };
 
-function PatientIcon({ color }: Props) {
+function PatientIcon({ color, h, w }: Props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="18"
+      width={w ? w : "24"}
+      height={h ? h : "18"}
       viewBox="0 0 24 18"
       fill="none"
       className="ml-1"

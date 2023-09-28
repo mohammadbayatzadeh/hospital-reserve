@@ -6,12 +6,12 @@ type Props = { bed: Bed };
 function RoomDetail({ bed }: Props) {
   return (
     <div className="w-[200px] flex flex-col items-center p-5 bg-white mx-2 rounded-lg">
-      <span className="flex w-full justify-between bg-white">
-        <PatientIcon color="#949EDA"  />
+      <span className="flex w-full justify-between bg-white items-center px-1">
+        <PatientIcon color="#949EDA" w="48" h="36" />
         تخت
-        {bed.bed_number}
+        {bed.bed_number.substring(1)}
       </span>
-      <span className="w-full text-text-secondary py-2 ">
+      <span className="w-full text-text-secondary py-2 text-center ">
         شماره تخت : {bed.bed_number}
       </span>
       <button className="w-full p-2 my-1 rounded-lg bg-bg-primary text-white">
