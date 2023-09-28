@@ -57,8 +57,8 @@ function DetailsViewer({ hospital }: Props) {
             </span>
           </div>
         </div>
-        {floor.rooms.map((room) => (
-          <RoomDetails room={room} />
+        {floor.rooms.map((room ,index) => (
+          <RoomDetails room={room} key={index} />
         ))}
       </section>
     </div>

@@ -67,7 +67,9 @@ const floorsDetails = (floor: Floor) => {
     details.rooms_count++;
     r.beds.forEach((bed) => {
       details.beds_count++;
-      if (!bed.ready) {
+      if (bed.reserved) {
+        details.notReady.push(bed);
+      } else if (!bed.ready) {
         details.notReady.push(bed);
       } else {
         details.ready.push(bed);
