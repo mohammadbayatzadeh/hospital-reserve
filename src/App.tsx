@@ -1,11 +1,11 @@
 import Layout from "./components/layouts/layout";
-import HospitalDetails from "./components/templates/HospitalDetails";
+import Routers from "./Routers";
 
 function App() {
   return (
     <div className="w-full flex items-center bg-bg-body flex-col min-h-screen">
       <Layout>
-        <HospitalDetails />
+        <Routers />
       </Layout>
     </div>
   );

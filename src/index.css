@@ -21,6 +21,7 @@
   --bg-secondary: #d7daea;
   --bg-tertiary: #ffc684;
   --bg-body: #f1f4f5;
+  overflow-x: hidden;
 }
 body {
   margin: 0;
