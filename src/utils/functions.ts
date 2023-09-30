@@ -1,3 +1,4 @@
+//types
 import { Bed, Floor, Hospital } from "../types/type";
 
 const roomsCounter = (hospital: Hospital): number => {

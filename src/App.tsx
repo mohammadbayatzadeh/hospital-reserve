@@ -1,4 +1,7 @@
+//layout
 import Layout from "./components/layouts/layout";
+
+//routers
 import Routers from "./Routers";
 
 function App() {

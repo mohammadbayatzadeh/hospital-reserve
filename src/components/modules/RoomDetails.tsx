@@ -1,12 +1,15 @@
+//types
 import { Room } from "../../types/type";
+
+//icons
 import RoomIcons from "../../icons/RoomIcons";
+
+//components
 import RoomDetail from "../elements/RoomDetail";
 
+//swiper
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
-import "./styles.css";
 
 type Props = { room: Room };
 

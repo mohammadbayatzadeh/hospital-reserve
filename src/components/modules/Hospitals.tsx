@@ -1,28 +1,30 @@
-import React, { useRef, useState } from "react";
-// Import Swiper React components
+//swiper
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
+import SwiperCore from "swiper";
+import { EffectCards } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-cards";
+import "swiper/css/autoplay";
 
-// import required modules
-import { EffectCards } from "swiper/modules";
-
-import "./cardstyles.css";
+//components
 import HospitalItem from "../elements/HospitalItem";
+
+//data
 import { HospitalData } from "../../utils/randomHospitalData";
+
+//types
 import { Hospital } from "../../types/type";
 
-type Props = {};
+function Hospitals() {
+  SwiperCore.use([Autoplay]);
 
-function Hospitals({}: Props) {
   return (
     <div className="w-full flex flex-col my-12">
       <h4 className="text-center text-3xl text-bg-primary mb-5">
         بیمارستان های تحت قرارداد
       </h4>
-      <div className="w-full !flex justify-around ">
+      <div className="w-full flex flex-col md:!flex-row justify-around ">
         <div className="flex flex-col items-center">
           <span className="text-bg-primary font-bold text-xl">تهران</span>
           <Swiper
@@ -31,6 +33,10 @@ function Hospitals({}: Props) {
             modules={[EffectCards]}
             className="mySwiper"
             style={{ width: "240px", height: "250px" }}
+            autoplay={{
+              delay: 1500,
+              disableOnInteraction: false,
+            }}
           >
             {HospitalData.map((hospital: Hospital) => (
               <SwiperSlide style={{ width: "240px", height: "200px" }}>
@@ -47,6 +53,10 @@ function Hospitals({}: Props) {
             modules={[EffectCards]}
             className="mySwiper"
             style={{ width: "240px", height: "250px" }}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+            }}
           >
             {HospitalData.map((hospital: Hospital) => (
               <SwiperSlide style={{ width: "240px", height: "200px" }}>
@@ -63,6 +73,10 @@ function Hospitals({}: Props) {
             modules={[EffectCards]}
             className="mySwiper"
             style={{ width: "240px", height: "250px" }}
+            autoplay={{
+              delay: 1000,
+              disableOnInteraction: false,
+            }}
           >
             {HospitalData.map((hospital: Hospital) => (
               <SwiperSlide style={{ width: "240px", height: "200px" }}>

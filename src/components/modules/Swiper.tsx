@@ -1,11 +1,14 @@
+//swiper
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
-import "./styles.css";
 
+//types
 import { Floor, Hospital } from "../../types/type";
+
+//functions
 import { floorsList } from "../../utils/functions";
+
+//components
 import Buildingtab from "../elements/Buildingtab";
 
 type Props = {
@@ -24,7 +27,7 @@ function SwiperComponent({
   return (
     <Swiper slidesPerView={"auto"} centeredSlides={false}>
       {floorsList(hospital).map((floor, index): any => (
-        <SwiperSlide className="" key={index}>
+        <SwiperSlide className="" key={index} style={{ width: "fit-content" }}>
           <Buildingtab
             floor={floor}
             setFloor={setFloor}

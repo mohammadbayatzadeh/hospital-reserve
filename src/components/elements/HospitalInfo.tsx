@@ -1,5 +1,10 @@
+//types
 import { Hospital } from "../../types/type";
+
+//icons
 import PatientIcon from "../../icons/PatientIcon";
+
+//functions
 import { bedsDetails, roomsCounter } from "../../utils/functions";
 
 type Props = { hospital: Hospital };
@@ -9,7 +14,9 @@ function HospitalInfo({ hospital }: Props) {
 
   return (
     <div className="w-full  md:flex flex-cols justify-between ">
-      <h3 className="-translate-y-6 bg-white px-2">لیست ساختمان ها و تخت های بیمارستان {hospital.name}:</h3>
+      <h3 className="-translate-y-6 bg-white px-2">
+        لیست ساختمان ها و تخت های بیمارستان {hospital.name}:
+      </h3>
       <div className="flex flex-col w-[400px] max-w-full p-2 rounded-lg bg-bg-secondary text-xs text-text-fourth ">
         <span className="w-full py-1 flex justify-between items-center">
           <p className="w-full ">

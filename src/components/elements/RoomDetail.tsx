@@ -1,4 +1,7 @@
+//types
 import { Bed } from "../../types/type";
+
+//icons
 import PatientIcon from "../../icons/PatientIcon";
 
 type Props = { bed: Bed };

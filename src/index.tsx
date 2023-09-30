@@ -1,8 +1,12 @@
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import App from "./App";
-import "./fonts/IranianSans.ttf";
 import { BrowserRouter } from "react-router-dom";
+
+//global styles
+import "./index.css";
+
+//fonts
+import "./fonts/IranianSans.ttf";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

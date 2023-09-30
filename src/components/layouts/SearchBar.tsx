@@ -1,24 +1,30 @@
+import { useNavigate } from "react-router-dom";
+
+//types
 import { Hospital } from "../../types/type";
+
+//data
 import { HospitalData } from "../../utils/randomHospitalData";
 
 type Props = {
   hospital: Hospital;
-  setHospital: Function;
 };
 
 const SearchBar = (props: Props) => {
-  const { hospital, setHospital } = props;
+  const navigate = useNavigate();
+  const { hospital } = props;
   return (
-    <nav className="w-full bg-white rounded-lg flex flex-wrap md:flex-nowrap items-center my-4">
+    <nav className="w-full bg-white rounded-lg flex flex-wrap md:flex-nowrap items-center">
       <select
         id="mon-menu-deroulant"
         className="bg-white w-full py-4 px-3 md:border-l  border-solid border-text-tertiary rounded-t-lg md:rounded-l-lg"
       >
         {HospitalData.map((data, index) => (
           <option
-            value={"option" + index}
-            onClick={() => setHospital(data)}
+            value={`${data.name}`}
+            onClick={() => navigate("/hospital-page/" + data.name)}
             key={index}
+            selected={data.name === hospital.name}
           >
             بیمارستان {data.name}
           </option>

@@ -1,5 +1,10 @@
+//constants
 import { alphabet, hospitalNames, numbers } from "../data/constants";
+
+//types
 import { Bed, Building, Hospital } from "../types/type";
+
+//functions
 import { bedNumber } from "./createBedNumber";
 
 const HospitalData: Array<Hospital> = hospitalNames.map((name) => {

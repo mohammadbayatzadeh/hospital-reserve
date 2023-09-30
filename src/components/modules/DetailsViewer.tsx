@@ -1,9 +1,19 @@
 import { useState } from "react";
-import HospitalIcon from "../../icons/HospitalIcon";
+
+//types
 import { Hospital } from "../../types/type";
+
+//swiper
 import SwiperComp from "./Swiper";
+
+//icons
+import HospitalIcon from "../../icons/HospitalIcon";
 import PatientIcon from "../../icons/PatientIcon";
+
+//functions
 import { floorsDetails } from "../../utils/functions";
+
+//components
 import RoomDetails from "./RoomDetails";
 
 type Props = { hospital: Hospital };
@@ -57,7 +67,7 @@ function DetailsViewer({ hospital }: Props) {
             </span>
           </div>
         </div>
-        {floor.rooms.map((room ,index) => (
+        {floor.rooms.map((room, index) => (
           <RoomDetails room={room} key={index} />
         ))}
       </section>

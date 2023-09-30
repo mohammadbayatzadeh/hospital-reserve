@@ -1,3 +1,4 @@
+//components
 import Doctor from "../elements/Doctor";
 
 function Doctors() {

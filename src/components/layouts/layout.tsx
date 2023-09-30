@@ -1,3 +1,5 @@
+
+//components
 import Header from "./Header";
 
 type Props = {

@@ -1,4 +1,8 @@
+
+//components
 import Feature from "../elements/Feature";
+
+//icons
 import { BiPlusMedical } from "react-icons/bi";
 import {
   FaBriefcaseMedical,

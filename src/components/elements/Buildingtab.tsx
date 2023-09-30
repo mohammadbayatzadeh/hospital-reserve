@@ -1,4 +1,7 @@
+//icons
 import BuildingIcon from "../../icons/BuildingIcon";
+
+//types
 import { Floor, Hospital } from "../../types/type";
 
 type Props = {
@@ -32,7 +35,9 @@ function Buildingtab({
       }`}
       onClick={changeHandler}
     >
-      <BuildingIcon color={floor.number === currentFloor.number ? '#36459b' : null} />
+      <BuildingIcon
+        color={floor.number === currentFloor.number ? "#36459b" : null}
+      />
       {floor.number}
     </div>
   );
