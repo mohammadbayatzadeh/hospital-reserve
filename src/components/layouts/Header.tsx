@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <a href="/" className="flex item-center">
+    <a href="/" className="flex item-center w-fit">
       <img
         alt="logo"
         src={require("../../images/main.png")}
