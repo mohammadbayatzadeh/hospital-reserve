@@ -1,5 +1,6 @@
 import Navbar from "../layouts/Navbar";
 import Banners from "../modules/Banners";
+import Doctors from "../modules/Doctors";
 import Features from "../modules/Features";
 
 function landingPage() {
@@ -8,6 +9,7 @@ function landingPage() {
       <Navbar />
       <Banners />
       <Features />
+      <Doctors />
     </>
   );
 }
