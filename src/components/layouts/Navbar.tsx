@@ -4,7 +4,7 @@ function Navbar() {
       <nav className="w-full rounded-t-lg">
         <ul className="flex text-[8px] sm:text-base border-solid border-t-4 border-bg-primary rounded-t-lg">
           <li className="ml-5 p-2 text-bg-primary border-solid transition-all border-bg-primary hover:bg-bg-primary hover:text-white rounded-tr-lg">
-            <a href="/details">تخصیص تخت</a>
+            <a href="/hospital-page">تخصیص تخت</a>
           </li>
           <li className="ml-5 p-2 text-bg-primary border-solid transition-all border-bg-primary hover:bg-bg-primary hover:text-white">
             <a href="/#">مشاورین</a>

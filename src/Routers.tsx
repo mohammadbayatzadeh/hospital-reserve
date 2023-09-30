@@ -6,7 +6,7 @@ function Routers() {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
-      <Route path="/details" element={<HospitalDetails />} />
+      <Route path="/hospital-page" element={<HospitalDetails />} />
     </Routes>
   );
 }

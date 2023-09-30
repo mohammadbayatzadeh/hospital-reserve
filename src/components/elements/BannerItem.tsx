@@ -16,7 +16,7 @@ function BannerItem({ image, title }: Props) {
       <h3 className="absolute top-5 right-2 p-3 bg-bg-primary text-white rounded-lg">
         {title}
       </h3>
-      <a href="/details" className="absolute top-20 right-2 p-2 bg-bg-primary text-white text-sm rounded-lg hover:bg-bg-tertiary transition-all cursor-pointer">
+      <a href="/hospital-page" className="absolute top-20 right-2 p-2 bg-bg-primary text-white text-sm rounded-lg hover:bg-bg-tertiary transition-all cursor-pointer">
         همین الان رزرو کنید
       </a>
     </div>
