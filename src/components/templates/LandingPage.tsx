@@ -4,6 +4,7 @@ import Banners from "../modules/Banners";
 import Doctors from "../modules/Doctors";
 import Features from "../modules/Features";
 import Hospitals from "../modules/Hospitals";
+import Supporters from "../modules/Supporters";
 
 function landingPage() {
   return (
@@ -13,6 +14,7 @@ function landingPage() {
       <Hospitals />
       <Features />
       <Doctors />
+      <Supporters />
     </>
   );
 }

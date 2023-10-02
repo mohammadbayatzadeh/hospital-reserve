@@ -26,16 +26,16 @@ const HospitalDetails = () => {
   }, [slug]);
 
   return (
-    <div>
-      <h4 className="font-bold text-lg rounded-t-lg border-t-4 border-bg-primary p-3">
+    <div className="mb-10"> 
+      <h4 className="font-bold text-lg rounded-t-lg border-t-4 border-bg-primary p-3 ">
         تخصیص تخت
       </h4>
       <SearchBar hospital={hospital} />
-      <section className="w-full flex flex-col bg-white p-3 rounded-lg ">
+      <section className="w-full flex flex-col bg-white p-3 rounded-lg border-t-4 border-bg-primary">
         <h2 className="text-2xl font-bold mb-8">
           <p> اطلاعات بیمارستان {hospital.name}</p>
         </h2>
-        <div className=" p-2 border border-text-tertiary border-solid rounded-lg">
+        <div className=" p-2 border border-text-tertiary border-solid rounded-lg border-t-2 border-t-bg-primary">
           <HospitalInfo hospital={hospital} />
           <div>
             <DetailsViewer hospital={hospital} />

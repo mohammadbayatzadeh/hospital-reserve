@@ -14,10 +14,10 @@ const SearchBar = (props: Props) => {
   const navigate = useNavigate();
   const { hospital } = props;
   return (
-    <nav className="w-full bg-white rounded-lg flex flex-wrap md:flex-nowrap items-center">
+    <nav className="w-full bg-white rounded-lg flex flex-wrap md:flex-nowrap items-center mb-5 border-t-2 border-bg-primary">
       <select
         id="mon-menu-deroulant"
-        className="bg-white w-full py-4 px-3 md:border-l  border-solid border-text-tertiary rounded-t-lg md:rounded-l-lg"
+        className="bg-white w-full py-4 px-3 md:border-l border-solid border-bg-primary rounded-t-lg md:rounded-l-lg"
       >
         {HospitalData.map((data, index) => (
           <option
@@ -32,7 +32,7 @@ const SearchBar = (props: Props) => {
       </select>
       <select
         id="mon-menu-deroulant"
-        className="bg-white w-full py-4 px-3 md:border-l border-solid border-text-tertiary md:rounded-l-lg"
+        className="bg-white w-full py-4 px-3 md:border-l border-solid border-bg-primary md:rounded-l-lg"
       >
         {hospital.buildings.map((data, index) => (
           <option value={"option" + index} key={index}>
@@ -42,7 +42,7 @@ const SearchBar = (props: Props) => {
       </select>
       <select
         id="mon-menu-deroulant"
-        className="bg-white w-full py-4 px-3 md:border-l border-solid border-text-tertiary md:rounded-l-lg"
+        className="bg-white w-full py-4 px-3 md:border-l border-solid border-bg-primary md:rounded-l-lg"
       >
         <option value="all">انتخاب نوع تخت</option>
         <option value="special">ویژه</option>

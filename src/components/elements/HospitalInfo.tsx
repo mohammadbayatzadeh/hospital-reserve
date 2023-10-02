@@ -13,7 +13,7 @@ function HospitalInfo({ hospital }: Props) {
   const bedDetails = bedsDetails(hospital);
 
   return (
-    <div className="w-full  md:flex flex-cols justify-between ">
+    <div className="w-full md:flex flex-cols justify-between ">
       <h3 className="-translate-y-6 bg-white px-2">
         لیست ساختمان ها و تخت های بیمارستان {hospital.name}:
       </h3>
