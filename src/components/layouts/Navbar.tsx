@@ -10,7 +10,7 @@ function Navbar() {
             <a href="/#">مشاورین</a>
           </li>
           <li className="ml-5 p-2 text-bg-primary border-solid transition-all border-bg-primary hover:bg-bg-primary hover:text-white">
-            <a href="/#">قوانین رزرو</a>
+            <a href="/auth">رزرو</a>
           </li>
           <li className="ml-5 p-2 text-bg-primary border-solid transition-all border-bg-primary hover:bg-bg-primary hover:text-white">
             <a href="/#">درباره ما</a>
