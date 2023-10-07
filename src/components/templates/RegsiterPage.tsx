@@ -1,7 +1,7 @@
 function RegsiterPage() {
   return (
-    <div className="w-full p-10 ">
-      <div className="flex bg-bg-secondary rounded-lg">
+    <div className="w-full my-10">
+      <div className="flex bg-bg-secondary rounded-lg border-y-4 border-bg-primary">
         <form className="w-full flex flex-col items-center py-3 px-5">
           <h4 className="text-bg-primary font-bold text-xl">ثبت نام</h4>
           <input
