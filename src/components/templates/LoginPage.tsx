@@ -29,7 +29,7 @@ function LoginPage() {
         <img
           src={require("../../images/auth.png")}
           alt="auth"
-          className="w-full h-full rounded-l-lg"
+          className="w-full hidden md:flex min-h-full rounded-l-lg"
         />
       </div>
     </div>
