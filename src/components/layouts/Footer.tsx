@@ -38,12 +38,12 @@ function Footer() {
             </ul>
           </div>
           <div className="w-full lg:px-2 my-3 lg:m-0 ">
-            <p className="text-text-primary font-bold">راه های ارتباطی</p>
+            <p className="text-text-primary font-bold">آدرس دفتر</p>
             <ul className="w-full list-disc list-inside marker:text-bg-primary flex flex-wrap justify-between flex-row sm:flex-col">
-              <li className="min-w-fit">اینستاگرام</li>
-              <li className="min-w-fit">تلگرام</li>
-              <li className="min-w-fit">واتساپ</li>
-              <li className="min-w-fit">توییتر</li>
+              <li className="min-w-fit">استان</li>
+              <li className="min-w-fit">شهر</li>
+              <li className="min-w-fit">کوچه</li>
+              <li className="min-w-fit">پلاک</li>
             </ul>
           </div>
           <div className="w-full lg:px-2 my-3 lg:m-0 ">

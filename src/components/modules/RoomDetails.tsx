@@ -22,7 +22,7 @@ function RoomDetails({ room }: Props) {
       </span>
       <Swiper slidesPerView={"auto"} centeredSlides={false}>
         {room.beds.map((bed, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} style={{ width: "fit-content" }}>
             <RoomDetail bed={bed} />
           </SwiperSlide>
         ))}

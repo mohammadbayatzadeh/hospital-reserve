@@ -20,7 +20,7 @@ function Hospitals() {
   SwiperCore.use([Autoplay]);
 
   return (
-    <div className="w-full flex flex-col my-12">
+    <div className="w-full flex flex-col my-12" id="supportes">
       <h4 className="text-center text-3xl text-bg-primary mb-5">
         بیمارستان های تحت قرارداد
       </h4>
