@@ -32,7 +32,10 @@ function RoomDetail({ bed }: Props) {
       <span className="w-full text-text-secondary py-2 text-center ">
         شماره تخت : {bed.bed_number}
       </span>
-      <a href="/login" className="w-full p-2 my-1 rounded-lg bg-bg-primary text-white text-center">
+      <a
+        href="/login"
+        className="w-full p-2 my-1 rounded-lg bg-bg-primary text-white text-center"
+      >
         انتخاب تخت
       </a>
       <button
