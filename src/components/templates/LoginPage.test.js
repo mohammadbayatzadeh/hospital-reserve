@@ -51,18 +51,28 @@ describe("testing login page", () => {
     expect(getElement("Button")).toBeEnabled();
   });
 });
+
 describe("errors handling", () => {
   beforeEach(() => {
     expect(screen.queryByText(ERROR_MSGS.PASSWORD)).not.toBeInTheDocument();
     expect(screen.queryByText(ERROR_MSGS.USERNAME)).not.toBeInTheDocument();
   });
+
   test("show email error when email is invalid", () => {
     changeElement("Email", "mamad");
     changeElement("Password", "123456");
     act(() => {
       userEvent.click(getElement("Button"));
     });
-    console.log(getElement("Password"));
     expect(screen.queryByText(ERROR_MSGS.USERNAME)).toBeInTheDocument();
+  });
+
+  test("show password error when password is short", () => {
+    changeElement("Email", "mamad@gmail.com");
+    changeElement("Password", "1234");
+    act(() => {
+      userEvent.click(getElement("Button"));
+    });
+    expect(screen.queryByText(ERROR_MSGS.PASSWORD)).toBeInTheDocument();
   });
 });
