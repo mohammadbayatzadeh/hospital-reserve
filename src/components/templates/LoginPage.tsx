@@ -43,9 +43,10 @@ function LoginPage() {
             value={form.username}
             onChange={changeHandler}
           />
+
           <input
             className="w-full my-5 bg-transparent border-y-2 border-bg-primary rounded-lg p-2"
-            placeholder=" رمز عبور"
+            placeholder="رمز عبور"
             name="password"
             type="password"
             value={form.password}
