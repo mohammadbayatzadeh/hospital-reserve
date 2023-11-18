@@ -7,10 +7,12 @@ function LoginPage() {
           <input
             className="w-full my-5 bg-transparent border-y-2 border-bg-primary rounded-lg p-2"
             placeholder="نام کاربری"
+            name="username"
           />
           <input
             className="w-full my-5 bg-transparent border-y-2 border-bg-primary rounded-lg p-2"
             placeholder=" رمز عبور"
+            name="password"
             type="password"
           />
           <button className="p-2 text-white bg-bg-primary rounded-lg mt-5 border-2 transition-all duration-500 hover:bg-bg-secondary hover:text-bg-primary hover:border-bg-primary">
