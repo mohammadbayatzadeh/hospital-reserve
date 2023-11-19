@@ -3,7 +3,7 @@ import { Bed, Floor, Hospital } from "../types/type";
 
 export const creators = {
   craeteBedNumber(
-    building: String,
+    building: string,
     floor: number,
     room: number,
     bed: number
@@ -32,6 +32,7 @@ export const creators = {
     });
     return rooms;
   },
+  
   floorsList(hospital: Hospital): Array<Floor> {
     const list: Array<Floor> = [];
     hospital.buildings.forEach((build) => {

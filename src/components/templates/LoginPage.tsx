@@ -17,7 +17,7 @@ function LoginPage() {
   };
   const submitHandler = (e: any) => {
     e.preventDefault();
-    if (!form.username.match(/[a-z0-9]{3,20}\@[a-z]{2,10}\.[a-z]{2,5}/gim)) {
+    if (!form.username.match(/[a-z0-9]{3,20}@[a-z]{2,10}\.[a-z]{2,5}/gim)) {
       return setError(ERROR_MSGS.USERNAME);
     } else if (form.password.length <= 5) {
       return setError(ERROR_MSGS.PASSWORD);
