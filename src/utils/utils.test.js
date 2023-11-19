@@ -9,7 +9,5 @@ describe("test utils function", () => {
     expect(utils.isEmpty(testCase2)).toBeTruthy();
     expect(utils.isEmpty(testCase3)).toBeFalsy();
   });
-  test('to create a random hospital data ' ,()=>{
-    expect()
-  })
+  test("to create a random hospital data ", () => {});
 });

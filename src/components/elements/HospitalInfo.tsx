@@ -5,12 +5,12 @@ import { Hospital } from "../../types/type";
 import PatientIcon from "../../icons/PatientIcon";
 
 //functions
-import { bedsDetails, roomsCounter } from "../../utils/functions";
+import { creators } from "../../utils/functions";
 
 type Props = { hospital: Hospital };
 
 function HospitalInfo({ hospital }: Props) {
-  const bedDetails = bedsDetails(hospital);
+  const bedDetails = creators.bedsDetails(hospital);
 
   return (
     <div className="w-full md:flex flex-cols justify-between ">
@@ -29,7 +29,7 @@ function HospitalInfo({ hospital }: Props) {
         </span>
         <span className="w-full py-1 flex justify-between items-center">
           <p className="w-full ">
-            تعداد کل اتاق ها : {roomsCounter(hospital)} عدد
+            تعداد کل اتاق ها : {creators.roomsCounter(hospital)} عدد
           </p>
           <p className="w-full flex">
             <PatientIcon color="#ffc684" />

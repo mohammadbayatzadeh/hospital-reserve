@@ -6,10 +6,10 @@ import "swiper/css";
 import { Floor, Hospital } from "../../types/type";
 
 //functions
-import { floorsList } from "../../utils/functions";
 
 //components
 import Buildingtab from "../elements/Buildingtab";
+import { creators } from "../../utils/functions";
 
 type Props = {
   hospital: Hospital;
@@ -26,7 +26,7 @@ function SwiperComponent({
 }: Props) {
   return (
     <Swiper slidesPerView={"auto"} centeredSlides={false}>
-      {floorsList(hospital).map((floor, index): any => (
+      {creators.floorsList(hospital).map((floor, index): any => (
         <SwiperSlide className="" key={index} style={{ width: "fit-content" }}>
           <Buildingtab
             floor={floor}

@@ -11,17 +11,17 @@ import HospitalIcon from "../../icons/HospitalIcon";
 import PatientIcon from "../../icons/PatientIcon";
 
 //functions
-import { floorsDetails } from "../../utils/functions";
 
 //components
 import RoomDetails from "./RoomDetails";
+import { creators } from "../../utils/functions";
 
 type Props = { hospital: Hospital };
 
 function DetailsViewer({ hospital }: Props) {
   const [building, setBuilding] = useState(hospital.buildings[0]);
   const [floor, setFloor] = useState(building.floors[0]);
-  const floorDetails = floorsDetails(floor);
+  const floorDetails = creators.floorsDetails(floor);
 
   return (
     <div>
@@ -40,7 +40,7 @@ function DetailsViewer({ hospital }: Props) {
           setFloor={setFloor}
         />
       </div>
-      <section className=" bg-white flex flex-col p-3 rounded-lg  border border-text-tertiary border-solid rounded-lg">
+      <section className=" bg-white flex flex-col p-3 rounded-lg  border border-text-tertiary border-solid ">
         <div className="w-full md:flex flex-cols justify-between">
           <h2 className=" text-md px-2 mb-3">
             اطلاعات تخت های {floor.number}:
