@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ERROR_MSGS } from "../constants/errors";
+import { utils } from "../../utils/helper";
 
 function LoginPage() {
   const [form, setForm] = useState({
@@ -23,13 +24,7 @@ function LoginPage() {
     }
     console.log(form);
   };
-  const checkDisable = (): boolean => {
-    if (!form.password || !form.username) {
-      return true;
-    } else {
-      return false;
-    }
-  };
+
   return (
     <div className="w-full my-10">
       <div className="flex bg-bg-secondary rounded-lg border-y-4 border-bg-primary">
@@ -59,7 +54,9 @@ function LoginPage() {
           )}
           <button
             className="p-2 text-white bg-bg-primary rounded-lg mt-5 border-2 transition-all duration-500 hover:bg-bg-secondary hover:text-bg-primary hover:border-bg-primary"
-            disabled={checkDisable()}
+            disabled={
+              utils.isEmpty(form.password) || utils.isEmpty(form.username)
+            }
             type="submit"
             onClick={submitHandler}
           >

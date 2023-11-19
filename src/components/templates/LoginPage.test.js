@@ -5,6 +5,7 @@ import userEvent from "@testing-library/user-event";
 
 import LoginPage from "./LoginPage";
 import { ERROR_MSGS } from "../constants/errors";
+import { utils } from "../../utils/helper";
 
 const getElement = (elm) => {
   const elements = {
@@ -43,6 +44,13 @@ describe("testing login page", () => {
 
   test("button must disable when all inputs are empty", () => {
     expect(getElement("Button")).toBeDisabled();
+  });
+
+  test("check the usEmpty calling", () => {
+    //spyOn
+    const isEmpty = jest.spyOn(utils, "isEmpty");
+    utils.isEmpty(getElement("Email").value);
+    expect(isEmpty).toHaveBeenCalledTimes(1);
   });
 
   test("button must enable when all inputs are filled", () => {
