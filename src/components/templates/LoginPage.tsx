@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { ERROR_MSGS } from "../constants/errors";
 import { utils } from "../../utils/helper";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     username: "",
     password: "",
@@ -22,7 +24,7 @@ function LoginPage() {
     } else {
       setError("");
     }
-    console.log(form);
+    navigate('/')
   };
 
   return (
@@ -38,7 +40,6 @@ function LoginPage() {
             value={form.username}
             onChange={changeHandler}
           />
-
           <input
             className="w-full my-5 bg-transparent border-y-2 border-bg-primary rounded-lg p-2"
             placeholder="رمز عبور"

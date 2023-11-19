@@ -22,6 +22,13 @@ const changeElement = (elm, value) => {
   });
 };
 
+//simulating navigate
+const mockUsedNavigate = jest.fn();
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => mockUsedNavigate,
+}));
+
 beforeEach(() => {
   render(<LoginPage />);
 });
@@ -82,5 +89,13 @@ describe("errors handling", () => {
       userEvent.click(getElement("Button"));
     });
     expect(screen.queryByText(ERROR_MSGS.PASSWORD)).toBeInTheDocument();
+  });
+  test("should navigate to home screen after submit", () => {
+    changeElement("Email", "mamad@gmail.com");
+    changeElement("Password", "123456");
+    act(() => {
+      userEvent.click(getElement("Button"));
+    });
+    expect(mockUsedNavigate).toHaveBeenCalledWith("/");
   });
 });
