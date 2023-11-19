@@ -1,7 +1,5 @@
-import { act, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-
-import userEvent from "@testing-library/user-event";
 
 import LoginPage from "./LoginPage";
 import { ERROR_MSGS } from "../constants/errors";
@@ -18,7 +16,7 @@ const getElement = (elm) => {
 
 const changeElement = (elm, value) => {
   act(() => {
-    userEvent.type(getElement(elm), value);
+    fireEvent.change(getElement(elm), { target: { value } });
   });
 };
 
@@ -77,7 +75,7 @@ describe("errors handling", () => {
     changeElement("Email", "mamad");
     changeElement("Password", "123456");
     act(() => {
-      userEvent.click(getElement("Button"));
+      fireEvent.click(getElement("Button"));
     });
     expect(screen.queryByText(ERROR_MSGS.USERNAME)).toBeInTheDocument();
   });
@@ -86,7 +84,7 @@ describe("errors handling", () => {
     changeElement("Email", "mamad@gmail.com");
     changeElement("Password", "1234");
     act(() => {
-      userEvent.click(getElement("Button"));
+      fireEvent.click(getElement("Button"));
     });
     expect(screen.queryByText(ERROR_MSGS.PASSWORD)).toBeInTheDocument();
   });
@@ -94,7 +92,7 @@ describe("errors handling", () => {
     changeElement("Email", "mamad@gmail.com");
     changeElement("Password", "123456");
     act(() => {
-      userEvent.click(getElement("Button"));
+      fireEvent.click(getElement("Button"));
     });
     expect(mockUsedNavigate).toHaveBeenCalledWith("/");
   });

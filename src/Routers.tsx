@@ -6,7 +6,7 @@ import LandingPage from "./components/templates/LandingPage";
 import RegsiterPage from "./components/templates/RegsiterPage";
 import LoginPage from "./components/templates/LoginPage";
 
-function Routers() {
+function MainRouter() {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
@@ -18,4 +18,4 @@ function Routers() {
   );
 }
 
-export default Routers;
+export default MainRouter;

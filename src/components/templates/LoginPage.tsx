@@ -31,7 +31,7 @@ function LoginPage() {
     <div className="w-full my-10">
       <div className="flex bg-bg-secondary rounded-lg border-y-4 border-bg-primary">
         <form className="w-full flex flex-col items-center py-3 px-5">
-          <h4 className="text-bg-primary font-bold text-xl">ورود</h4>
+          <h4 className="text-bg-primary font-bold text-xl">ورود به حساب</h4>
           <input
             className="w-full my-5 bg-transparent border-y-2 border-bg-primary rounded-lg p-2"
             placeholder="نام کاربری"
