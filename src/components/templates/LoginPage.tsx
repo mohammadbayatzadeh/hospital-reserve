@@ -1,7 +1,14 @@
 import { useState } from "react";
-import { ERROR_MSGS } from "../constants/errors";
-import { utils } from "../../utils/helper";
 import { useNavigate } from "react-router-dom";
+
+//helper
+import { utils } from "../../utils/helper";
+
+//constants
+import { ERROR_MSGS } from "../constants/errors";
+
+//components
+import TextBox from "../elements/TextBox";
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -11,10 +18,6 @@ function LoginPage() {
   });
   const [error, setError] = useState("");
 
-  const changeHandler = (e: any) => {
-    const { value, name } = e.target;
-    setForm({ ...form, [name]: value });
-  };
   const submitHandler = (e: any) => {
     e.preventDefault();
     if (!form.username.match(/[a-z0-9]{3,20}@[a-z]{2,10}\.[a-z]{2,5}/gim)) {
@@ -24,7 +27,7 @@ function LoginPage() {
     } else {
       setError("");
     }
-    navigate('/')
+    navigate("/");
   };
 
   return (
@@ -32,22 +35,9 @@ function LoginPage() {
       <div className="flex bg-bg-secondary rounded-lg border-y-4 border-bg-primary">
         <form className="w-full flex flex-col items-center py-3 px-5">
           <h4 className="text-bg-primary font-bold text-xl">ورود به حساب</h4>
-          <input
-            className="w-full my-5 bg-transparent border-y-2 border-bg-primary rounded-lg p-2"
-            placeholder="نام کاربری"
-            name="username"
-            type="text"
-            value={form.username}
-            onChange={changeHandler}
-          />
-          <input
-            className="w-full my-5 bg-transparent border-y-2 border-bg-primary rounded-lg p-2"
-            placeholder="رمز عبور"
-            name="password"
-            type="password"
-            value={form.password}
-            onChange={changeHandler}
-          />
+          <TextBox form={form} name="username" setForm={setForm} />
+          <TextBox form={form} name="password" setForm={setForm} />
+
           {error && (
             <p className="text-sm bg-bg-tertiary p-1 rounded-md text-bg-primary font-bold">
               {error}

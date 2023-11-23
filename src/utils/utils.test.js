@@ -22,6 +22,4 @@ describe("test utils function", () => {
     const hospital = HospitalData[0];
     expect(creators.bedsDetails(hospital)).not.toBeNaN();
   });
-
-  
 });
