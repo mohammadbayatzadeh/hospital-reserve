@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-//components
-import TextBox from "../elements/TextBox";
-
 //helper
 import { utils } from "../../utils/helper";
 
 //constants
 import { ERROR_MSGS } from "../constants/errors";
+
+//components
+import TextBox from "../elements/TextBox";
 
 function RegsiterPage() {
   const navigate = useNavigate();
@@ -34,8 +34,18 @@ function RegsiterPage() {
       <div className="flex bg-bg-secondary rounded-lg border-y-4 border-bg-primary">
         <form className="w-full flex flex-col items-center py-3 px-5">
           <h4 className="text-bg-primary font-bold text-xl">ثبت نام</h4>
-          <TextBox form={form} name="username" setForm={setForm} />
-          <TextBox form={form} name="password" setForm={setForm} />
+          <TextBox
+            form={form}
+            name="username"
+            setForm={setForm}
+            placeholder="نام کاربری"
+          />
+          <TextBox
+            form={form}
+            name="password"
+            setForm={setForm}
+            placeholder="رمز عبور"
+          />
 
           {error && (
             <p className="text-sm bg-bg-tertiary p-1 rounded-md text-bg-primary font-bold">

@@ -4,6 +4,7 @@ import "@testing-library/jest-dom";
 import LoginPage from "./LoginPage";
 import { ERROR_MSGS } from "../constants/errors";
 import { utils } from "../../utils/helper";
+import { BrowserRouter } from "react-router-dom";
 
 const getElement = (elm) => {
   const elements = {
@@ -28,7 +29,11 @@ jest.mock("react-router-dom", () => ({
 }));
 
 beforeEach(() => {
-  render(<LoginPage />);
+  render(
+    <BrowserRouter>
+      <LoginPage />
+    </BrowserRouter>
+  );
 });
 
 describe("testing login page", () => {

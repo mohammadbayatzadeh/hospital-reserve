@@ -10,10 +10,10 @@ function MainRouter() {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
-      <Route path="/hospital-page/:slug" element={<HospitalDetails />} />
-      <Route path="/hospital-page/" element={<HospitalDetails />} />
       <Route path="/register" element={<RegsiterPage />} />
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/hospital-page/:slug" element={<HospitalDetails />} />
+      <Route path="/hospital-page/" element={<HospitalDetails />} />
     </Routes>
   );
 }
