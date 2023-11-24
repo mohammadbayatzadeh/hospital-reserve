@@ -1,10 +1,11 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { BrowserRouter } from "react-router-dom";
 
 //templates
 import RegisterPage from "./RegsiterPage";
 import { utils } from "../../utils/helper";
+import { ERROR_MSGS } from "../constants/errors";
 
 const getElement = (elm) => {
   const elements = {
@@ -17,6 +18,13 @@ const getElement = (elm) => {
 const changeElement = (elm, value) => {
   fireEvent.change(getElement(elm), { target: { value } });
 };
+
+//mock navigation function
+const mockUsedNavigate = jest.fn();
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => mockUsedNavigate,
+}));
 
 beforeEach(() => {
   render(
@@ -42,6 +50,10 @@ describe("test inputs", () => {
     expect(getElement("password").value).toBe("123456");
   });
 
+  test("button must initially be disable", () => {
+    expect(getElement("button")).toBeDisabled();
+  });
+
   test("check the usEmpty calling", () => {
     //spyOn
     const isEmpty = jest.spyOn(utils, "isEmpty");
@@ -49,13 +61,42 @@ describe("test inputs", () => {
     expect(isEmpty).toHaveBeenCalledTimes(1);
   });
 
-  test("button must initially be disable", () => {
-    expect(getElement("button")).toBeDisabled();
-  });
-
   test("button must enable", () => {
     changeElement("username", "salam");
     changeElement("password", "123456");
     expect(getElement("button")).toBeEnabled();
+  });
+});
+
+describe("testing error handling", () => {
+  beforeEach(() => {
+    expect(screen.queryByText(ERROR_MSGS.PASSWORD)).not.toBeInTheDocument();
+    expect(screen.queryByText(ERROR_MSGS.USERNAME)).not.toBeInTheDocument();
+  });
+  test("username error test", () => {
+    changeElement("username", "salam");
+    changeElement("password", "123456");
+    act(() => {
+      fireEvent.click(getElement("button"));
+    });
+    expect(screen.queryByText(ERROR_MSGS.USERNAME)).toBeInTheDocument();
+  });
+
+  test("password error test", () => {
+    changeElement("username", "mamad@gmail.com");
+    changeElement("password", "123");
+    act(() => {
+      fireEvent.click(getElement("button"));
+    });
+    expect(screen.queryByText(ERROR_MSGS.PASSWORD)).toBeInTheDocument();
+  });
+
+  test("navigate to home page", () => {
+    changeElement("username", "mamad@gmail.com");
+    changeElement("password", "123456");
+    act(() => {
+      fireEvent.click(getElement("button"));
+    });
+    expect(mockUsedNavigate).toHaveBeenCalledWith("/");
   });
 });
