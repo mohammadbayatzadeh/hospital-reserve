@@ -1,5 +1,5 @@
 //components
-import Doctor from "../elements/Doctor";
+import Doctor from "../elements/landing/Doctor";
 
 function Doctors() {
   return (

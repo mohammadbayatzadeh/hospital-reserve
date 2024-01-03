@@ -15,7 +15,7 @@ function Doctor({ image }: Props) {
         </div>
         <img
           alt="doctor"
-          src={require(`../../images/doctros/doctor${image}.jpg`)}
+          src={require(`../../../images/doctros/doctor${image}.jpg`)}
           className="w-full h-[300px] rounded-t-lg transition-all group-hover:blur-sm"
         />
         <div className="p-2 border-2  border-solid border-bg-primary rounded-b-lg">
@@ -26,7 +26,7 @@ function Doctor({ image }: Props) {
             استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در
             ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
             کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی
-            در شصت و سه درصد گذشته حال و آینده{" "}
+            در شصت و سه درصد گذشته حال و آیندهs
           </p>
         </div>
       </div>

@@ -1,6 +1,6 @@
 
 //components
-import Feature from "../elements/Feature";
+import Feature from "../elements/landing/Feature";
 
 //icons
 import { BiPlusMedical } from "react-icons/bi";

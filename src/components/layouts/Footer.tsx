@@ -1,3 +1,6 @@
+//components
+import Footerpart from "../modules/general/Footerpart";
+
 function Footer() {
   return (
     <footer className="w-full flex flex-col items-center border-t-4 border-bg-primary rounded-t-lg p-5">
@@ -28,33 +31,18 @@ function Footer() {
           قرار گیرد.
         </p>
         <div className="w-full flex flex-col sm:flex-row justify-between text-text-secondary px-0 lg:px-3">
-          <div className="w-full lg:px-2 my-3 lg:m-0 ">
-            <p className="text-text-primary font-bold">راه های ارتباطی</p>
-            <ul className="w-full list-disc list-inside marker:text-bg-primary flex flex-wrap justify-between flex-row sm:flex-col">
-              <li className="min-w-fit">اینستاگرام</li>
-              <li className="min-w-fit">تلگرام</li>
-              <li className="min-w-fit">واتساپ</li>
-              <li className="min-w-fit">توییتر</li>
-            </ul>
-          </div>
-          <div className="w-full lg:px-2 my-3 lg:m-0 ">
-            <p className="text-text-primary font-bold">آدرس دفتر</p>
-            <ul className="w-full list-disc list-inside marker:text-bg-primary flex flex-wrap justify-between flex-row sm:flex-col">
-              <li className="min-w-fit">استان</li>
-              <li className="min-w-fit">شهر</li>
-              <li className="min-w-fit">کوچه</li>
-              <li className="min-w-fit">پلاک</li>
-            </ul>
-          </div>
-          <div className="w-full lg:px-2 my-3 lg:m-0 ">
-            <p className="text-text-primary font-bold">راه های ارتباطی</p>
-            <ul className="w-full list-disc list-inside marker:text-bg-primary flex flex-wrap justify-between flex-row sm:flex-col">
-              <li className="min-w-fit">اینستاگرام</li>
-              <li className="min-w-fit">تلگرام</li>
-              <li className="min-w-fit">واتساپ</li>
-              <li className="min-w-fit">توییتر</li>
-            </ul>
-          </div>
+          <Footerpart
+            title="راه های ارتباطی"
+            items={["اینستاگرام", "تلگرام", "واتساپ", "توییتر"]}
+          />
+          <Footerpart
+            title="آدرس دفتر"
+            items={["استان", "شهر", "کوچه", "پلاک"]}
+          />
+          <Footerpart
+            title="راه های ارتباطی"
+            items={["اینستاگرام", "تلگرام", "واتساپ", "توییتر"]}
+          />
         </div>
       </div>
     </footer>

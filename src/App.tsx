@@ -1,8 +1,8 @@
 //layout
-import MainRouter from "./Routers";
 import Layout from "./components/layouts/layout";
 
 //routers
+import MainRouter from "./Routers";
 
 function App() {
   return (

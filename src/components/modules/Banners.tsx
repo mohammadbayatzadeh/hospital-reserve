@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
 //components
-import BannerItem from "../elements/BannerItem";
+import BannerItem from "../elements/landing/BannerItem";
 
 // Import Swiper styles
 import "swiper/css";

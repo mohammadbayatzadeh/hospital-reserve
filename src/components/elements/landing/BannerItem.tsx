@@ -7,7 +7,7 @@ function BannerItem({ image, title }: Props) {
   return (
     <div className="w-full relative border-2 border-t-4 border-solid border-bg-primary rounded-b-lg">
       <img
-        src={require(`../../images/banners/banner${image}.${
+        src={require(`../../../images/banners/banner${image}.${
           image === "2" ? "jpg" : "png"
         }`)}
         alt="banner"
