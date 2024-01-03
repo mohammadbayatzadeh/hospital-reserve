@@ -3,8 +3,8 @@ import { Route, Routes } from "react-router-dom";
 //pages
 import HospitalDetails from "./components/templates/HospitalDetails";
 import LandingPage from "./components/templates/LandingPage";
-import RegsiterPage from "./components/templates/RegsiterPage";
-import LoginPage from "./components/templates/LoginPage";
+import RegsiterPage from "./components/templates/auth/RegsiterPage";
+import LoginPage from "./components/templates/auth/LoginPage";
 
 function MainRouter() {
   return (

@@ -2,13 +2,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 //helper
-import { utils } from "../../utils/helper";
+import { utils } from "../../../utils/helper";
 
 //constants
-import { ERROR_MSGS } from "../constants/errors";
+import { ERROR_MSGS } from "../../constants/errors";
 
 //components
-import TextBox from "../elements/TextBox";
+import TextBox from "../../elements/TextBox";
 
 function RegsiterPage() {
   const navigate = useNavigate();
@@ -74,7 +74,7 @@ function RegsiterPage() {
           </p>
         </form>
         <img
-          src={require("../../images/auth.png")}
+          src={require("../../../images/auth.png")}
           alt="auth"
           className="w-full hidden md:flex min-h-full rounded-l-lg"
         />

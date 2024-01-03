@@ -4,8 +4,8 @@ import { BrowserRouter } from "react-router-dom";
 
 //templates
 import RegisterPage from "./RegsiterPage";
-import { utils } from "../../utils/helper";
-import { ERROR_MSGS } from "../constants/errors";
+import { utils } from "../../../utils/helper";
+import { ERROR_MSGS } from "../../constants/errors";
 
 const getElement = (elm) => {
   const elements = {

@@ -2,8 +2,8 @@ import { act, fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import LoginPage from "./LoginPage";
-import { ERROR_MSGS } from "../constants/errors";
-import { utils } from "../../utils/helper";
+import { ERROR_MSGS } from "../../constants/errors";
+import { utils } from "../../../utils/helper";
 import { BrowserRouter } from "react-router-dom";
 
 const getElement = (elm) => {
